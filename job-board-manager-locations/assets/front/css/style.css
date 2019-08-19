@@ -1,0 +1,90 @@
+@charset "utf-8";
+/* CSS Document */
+
+#location-list{}
+	
+#location-list .item {
+  background: none repeat scroll 0 0 rgb(241, 241, 241);
+  border-bottom: 1px solid rgb(221, 221, 221);
+  cursor: pointer;
+  display: block;
+  padding: 4px 10px;
+  width: auto;
+}
+
+.google_map_city {
+    color: #E41409;
+    font-size: 16px;
+}
+.google_map_link {
+	text-decoration:none ;
+	outline:none ;
+}
+
+
+
+
+/* Expandable */
+
+.job_bm_expand_loc a{
+	text-decoration:none;
+    outline: none;
+}
+.job_bm_expand_loc ul {
+    padding: 0em;
+}
+
+.job_bm_expand_loc ul li, .job_bm_expand_loc ul li ul li {
+    position:relative;
+    top:0;
+    bottom:0;
+    padding-bottom: 7px;
+
+}
+
+.job_bm_expand_loc li {
+    list-style-type: none;
+}
+
+.job_bm_expand_loc li a {
+    padding:0 0 0 5px;
+    position: relative;
+    top:1em;
+}
+
+.job_bm_expand_loc li a:hover {
+    text-decoration: none;
+}
+
+.job_bm_expand_loc a.addBorderBefore:before {
+    content: "";
+    display: inline-block;
+    width: 2px;
+    height: 28px;
+    position: absolute;
+    left: -47px;
+    top:-16px;
+
+}
+
+.job_bm_expand_loc li:before {
+    content: "";
+    display: inline-block;
+    width: 25px;
+    height: 0;
+    position: relative;
+    left: 0em;
+    top:1em;
+   
+}
+
+.job_bm_expand_loc ul li ul li:last-child:after, .job_bm_expand_loc ul li:last-child:after {
+    content: '';
+    display: block;
+    width: 1em;
+    height: 1em;
+    position: relative;
+    background: #fff;
+    top: 9px;
+    left: -1px;
+}

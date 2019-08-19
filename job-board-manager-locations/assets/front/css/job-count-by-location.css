@@ -1,0 +1,45 @@
+@charset "utf-8";
+/* CSS Document */
+
+.job-count-by-location{}
+
+.job-count-by-location .total {
+  font-weight: bold;
+  padding: 10px 0;
+}
+
+.job-count-by-location .single-location {
+  border-bottom: 1px solid rgb(241, 241, 241);
+  font-size: 12px;
+  padding: 5px 0;
+}
+
+.job-count-by-location .single-location a {
+  text-decoration: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
