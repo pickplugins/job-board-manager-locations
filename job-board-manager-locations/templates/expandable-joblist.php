@@ -1,8 +1,4 @@
 <?php
-/*
-* @Author 		pickplugins
-* Copyright: 	2015 pickplugins
-*/
 
 if ( ! defined('ABSPATH')) exit;  // if direct access 
 
@@ -51,40 +47,53 @@ if ( ! defined('ABSPATH')) exit;  // if direct access
 	$class_job_bm_locations_functions = new class_job_bm_locations_functions();
 	$job_bm_locations_country_list = $class_job_bm_locations_functions->job_bm_locations_country_list();
 	
-	
-	$html .= '
-	<div class="job_bm_expand_loc">
-	<ul>';
+	?>
+    <div class="job_bm_expand_loc">
+        <ul>
+    <?php
+
 	
 	foreach( $loc_expand as $country => $locations ){
 		
 		
 		if(!empty($job_bm_locations_country_list[$country]))
-		$html .= '<li><a href="#">'.$job_bm_locations_country_list[$country].'</a>
-			<ul>';
+		?>
+            <li><a href="#"><?php echo $job_bm_locations_country_list[$country]; ?></a>
+                <ul>
+                    <?php
 
-		foreach( $locations as $location => $jobs ){
-			$html .= '
-				<li>
-					<a href="#">'.$location.'</a>
-					<ul>';
-					
-					foreach( $jobs as $serial => $job_id ){
-						$html .= '<li><a   href="'.get_the_permalink($job_id).'"><i class="fa fa-dot-circle-o"></i> '.get_the_title($job_id).'</a></li>';
-					}
-			$html.='			
-					</ul>
-				</li>';
-		}
-		
-		$html.=	'</ul>
-		</li>';
+                    foreach( $locations as $location => $jobs ){
+
+                        ?>
+                        <li>
+                            <a href="#"><?php echo $location; ?></a>
+                            <ul>
+                                <?php
+
+                                foreach( $jobs as $serial => $job_id ){
+                                    ?>
+                                    <li><a   href="<?php echo get_the_permalink($job_id); ?>"><i class="fa fa-dot-circle-o"></i>  <?php echo get_the_title($job_id); ?></a></li>
+                                    <?php
+                                }
+
+                                ?>
+                            </ul>
+
+                        </li>
+
+                        <?php
+                    }
+
+                    ?>
+             </ul>
+		</li>
+        <?php
 	}
 	
-$html .= '
-	</ul>
-</div>
-	';
+?>
+
+        </ul>
+    </div>
 	
 	
 	

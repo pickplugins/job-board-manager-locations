@@ -13,7 +13,7 @@ function job_bm_location_submit_form_title(){
 
     ?>
     <div class="form-field-wrap">
-        <div class="field-title"><?php echo __('Company name','job-board-manager-location-profile'); ?></div>
+        <div class="field-title"><?php echo __('Location name','job-board-manager-location-profile'); ?></div>
         <div class="field-input">
             <input placeholder="" type="text" value="<?php echo $post_title; ?>" name="post_title">
             <p class="field-details"><?php echo __('Write your location name','job-board-manager-location-profile');
@@ -37,7 +37,7 @@ function job_bm_location_submit_form_content(){
 
     ?>
     <div class="form-field-wrap">
-        <div class="field-title"><?php echo __('Company description','job-board-manager-location-profile'); ?></div>
+        <div class="field-title"><?php echo __('Location description','job-board-manager-location-profile'); ?></div>
         <div class="field-input">
             <?php
             ob_start();
@@ -124,7 +124,7 @@ function job_bm_location_submit_form_job_info_title(){
 
     ?>
     <div class="form-field-wrap ">
-        <div class="field-separator"><?php echo __('Company Information','job-board-manager-location-profile'); ?></div>
+        <div class="field-separator"><?php echo __('Location Information','job-board-manager-location-profile'); ?></div>
     </div>
     <?php
 }
@@ -141,42 +141,19 @@ function job_bm_location_submit_form_job_info_title(){
 
 /* Display vacancies input field  */
 
-add_action('job_bm_location_submit_form', 'job_bm_location_submit_form_tagline', 30);
+add_action('job_bm_location_submit_form', 'job_bm_location_submit_form_latlang', 30);
 
 
-function job_bm_location_submit_form_tagline(){
+function job_bm_location_submit_form_latlang(){
 
-    $job_bm_cp_tagline = isset($_POST['job_bm_cp_tagline']) ? sanitize_text_field($_POST['job_bm_cp_tagline']) : "";
+    $job_bm_location_latlang = isset($_POST['job_bm_location_latlang']) ? sanitize_text_field($_POST['job_bm_location_latlang']) : "";
 
     ?>
     <div class="form-field-wrap">
-        <div class="field-title"><?php echo __('Company tag-line','job-board-manager-location-profile'); ?></div>
+        <div class="field-title"><?php echo __('Latitude, Longitude','job-board-manager-location-profile'); ?></div>
         <div class="field-input">
-            <input placeholder="" type="text" value="<?php echo $job_bm_cp_tagline; ?>" name="job_bm_cp_tagline">
+            <input placeholder="" type="text" value="<?php echo $job_bm_location_latlang; ?>" name="job_bm_location_latlang">
             <p class="field-details"><?php echo __('Write your location tag-line','job-board-manager-location-profile');
-                ?></p>
-        </div>
-    </div>
-    <?php
-}
-
-
-
-
-/* Display years_experience input field  */
-
-add_action('job_bm_location_submit_form', 'job_bm_location_submit_form_mission', 30);
-
-function job_bm_location_submit_form_mission(){
-
-    $job_bm_cp_mission = isset($_POST['job_bm_cp_mission']) ? sanitize_text_field($_POST['job_bm_cp_mission']) : "";
-
-    ?>
-    <div class="form-field-wrap">
-        <div class="field-title"><?php echo __('Company mission','job-board-manager-location-profile'); ?></div>
-        <div class="field-input">
-            <input placeholder="" type="text" value="<?php echo $job_bm_cp_mission; ?>" name="job_bm_cp_mission">
-            <p class="field-details"><?php echo __('Write location mission.','job-board-manager-location-profile');
                 ?></p>
         </div>
     </div>
@@ -194,19 +171,19 @@ function job_bm_location_submit_form_country(){
     $class_job_bm_cp_functions = new class_job_bm_cp_functions();
     $job_bm_cp_country_list = $class_job_bm_cp_functions->job_bm_cp_country_list();
 
-    $job_bm_cp_country = isset($_POST['job_bm_cp_country']) ? sanitize_text_field($_POST['job_bm_cp_country']) : "";
+    $job_bm_location_country_code = isset($_POST['job_bm_location_country_code']) ? sanitize_text_field($_POST['job_bm_location_country_code']) : "";
 
 
     ?>
     <div class="form-field-wrap">
         <div class="field-title"><?php echo __('Country','job-board-manager-location-profile'); ?></div>
         <div class="field-input">
-            <select name="job_bm_cp_country" >
+            <select name="job_bm_location_country_code" >
                 <?php
                 if(!empty($job_bm_cp_country_list)):
                     foreach ($job_bm_cp_country_list as $job_type => $job_type_name){
 
-                        $selected = ($job_bm_cp_country == $job_type) ? 'selected' : '';
+                        $selected = ($job_bm_location_country_code == $job_type) ? 'selected' : '';
 
                         ?>
                         <option <?php echo $selected; ?> value="<?php echo esc_attr($job_type); ?>"><?php echo esc_html
@@ -224,64 +201,27 @@ function job_bm_location_submit_form_country(){
 }
 
 
-add_action('job_bm_location_submit_form', 'job_bm_location_submit_form_city', 30);
-
-function job_bm_location_submit_form_city(){
-
-    $job_bm_cp_city = isset($_POST['job_bm_cp_city']) ? sanitize_text_field($_POST['job_bm_cp_city']) : "";
-
-    ?>
-    <div class="form-field-wrap ">
-        <div class="field-title"><?php echo __('Company city','job-board-manager-location-profile'); ?></div>
-        <div class="field-input">
-            <input placeholder="" type="text" value="<?php echo $job_bm_cp_city; ?>" name="job_bm_cp_city">
-            <p class="field-details"><?php echo __('Write location city','job-board-manager-location-profile');
-                ?></p>
-        </div>
-    </div>
-    <?php
-}
-
-
-
-add_action('job_bm_location_submit_form', 'job_bm_location_submit_form_address', 30);
-
-function job_bm_location_submit_form_address(){
-
-    $job_bm_cp_address = isset($_POST['job_bm_cp_address']) ? sanitize_text_field($_POST['job_bm_cp_address']) : "";
-
-    ?>
-    <div class="form-field-wrap " >
-        <div class="field-title"><?php echo __('Company address','job-board-manager-location-profile'); ?></div>
-        <div class="field-input">
-            <input placeholder="" type="text" value="<?php echo $job_bm_cp_address; ?>" name="job_bm_cp_address">
-            <p class="field-details"><?php echo __('Write location address','job-board-manager-location-profile');
-                ?></p>
-        </div>
-    </div>
-    <?php
-}
 
 
 
 add_action('job_bm_location_submit_form', 'job_bm_location_submit_form_logo', 30);
 function job_bm_location_submit_form_logo(){
 
-    $job_bm_cp_logo = isset($_POST['job_bm_cp_logo']) ? sanitize_text_field($_POST['job_bm_cp_logo']) : job_bm_plugin_url."assets/front/images/placeholder.png";
+    $job_bm_location_icon = isset($_POST['job_bm_location_icon']) ? sanitize_text_field($_POST['job_bm_location_icon']) : job_bm_plugin_url."assets/front/images/placeholder.png";
 
     ?>
     <div class="form-field-wrap job-bm-media-upload">
-        <div class="field-title"><?php echo __('Company logo','job-board-manager-location-profile'); ?></div>
+        <div class="field-title"><?php echo __('Location icon','job-board-manager-location-profile'); ?></div>
         <div class="field-input">
             <div class="media-preview-wrap" style="">
-                <img class="media-preview" src="<?php echo $job_bm_cp_logo; ?>" style="width:100%;box-shadow: none;"/>
+                <img class="media-preview" src="<?php echo $job_bm_location_icon; ?>" style="width:100%;box-shadow: none;"/>
             </div>
 
-            <input placeholder="" type="text" value="<?php echo $job_bm_cp_logo; ?>" name="job_bm_cp_logo">
+            <input placeholder="" type="text" value="<?php echo $job_bm_location_icon; ?>" name="job_bm_location_icon">
             <span class="media-upload " id=""><?php echo __('Upload','job-board-manager-location-profile');?></span>
             <!--            <span class="media-clear" id="">--><?php //echo __('Clear','job-board-manager-location-profile');?><!--</span>-->
 
-            <p class="field-details"><?php echo __('Upload location logo','job-board-manager-location-profile');
+            <p class="field-details"><?php echo __('Upload location icon','job-board-manager-location-profile');
                 ?></p>
         </div>
     </div>
@@ -296,13 +236,13 @@ function job_bm_location_submit_form_cover(){
 
     ?>
     <div class="form-field-wrap job-bm-media-upload">
-        <div class="field-title"><?php echo __('Company cover image','job-board-manager-location-profile'); ?></div>
+        <div class="field-title"><?php echo __('Location cover image','job-board-manager-location-profile'); ?></div>
         <div class="field-input">
             <div class="media-preview-wrap" style="">
                 <img class="media-preview" src="<?php echo $job_bm_location_cover; ?>" style="width:100%;box-shadow: none;"/>
             </div>
 
-            <input placeholder="" type="text" value="<?php echo $job_bm_location_cover; ?>" name="job_bm_cp_logo">
+            <input placeholder="" type="text" value="<?php echo $job_bm_location_cover; ?>" name="job_bm_location_cover">
             <span class="media-upload " id=""><?php echo __('Upload','job-board-manager-location-profile');?></span>
             <!--            <span class="media-clear" id="">--><?php //echo __('Clear','job-board-manager-location-profile');?><!--</span>-->
 
@@ -429,26 +369,15 @@ function job_bm_location_submit_data($post_data){
         $error->add( 'post_content', __( 'ERROR: Company details is empty.', 'job-board-manager-location-profile' ) );
     }
 
-    if(empty($post_data['job_bm_cp_tagline'])){
+    if(empty($post_data['job_bm_location_latlang'])){
 
-        $error->add( 'job_bm_cp_tagline', __( 'ERROR: Company tag-line is empty.', 'job-board-manager-location-profile' ) );
+        $error->add( 'job_bm_location_latlang', __( 'ERROR: Company Latitude, Longitude is empty.', 'job-board-manager-location-profile' ) );
     }
 
 
+    if(empty($post_data['job_bm_location_country_code'])){
 
-    if(empty($post_data['job_bm_cp_size'])){
-
-        $error->add( 'job_bm_cp_size', __( 'ERROR: Company size is empty.', 'job-board-manager-location-profile' ) );
-    }
-
-
-
-
-
-
-    if(empty($post_data['job_bm_cp_logo'])){
-
-        $error->add( 'job_bm_cp_logo', __( 'ERROR: Company logo is empty.', 'job-board-manager-location-profile' ) );
+        $error->add( 'job_bm_location_country_code', __( 'ERROR: Country is empty.', 'job-board-manager-location-profile' ) );
     }
 
     if(empty($post_data['g-recaptcha-response']) && $job_bm_location_submit_recaptcha =='yes'){
@@ -525,34 +454,15 @@ add_action('job_bm_location_submitted', 'job_bm_location_submitted_save_data', 9
 function job_bm_location_submitted_save_data($location_id, $post_data){
 
     $user_id = get_current_user_id();
-
-    $location_category = isset($post_data['location_category']) ? sanitize_text_field($post_data['location_category']) : "";
-    $job_bm_cp_tagline = isset($post_data['job_bm_cp_tagline']) ? sanitize_text_field($post_data['job_bm_cp_tagline']) : "";
-    $job_bm_cp_mission = isset($post_data['job_bm_cp_mission']) ? sanitize_text_field($post_data['job_bm_cp_mission']) : "";
-    $job_bm_cp_country = isset($post_data['job_bm_cp_country']) ? sanitize_text_field($post_data['job_bm_cp_country']) : "";
-    $job_bm_cp_city = isset($post_data['job_bm_cp_city']) ? sanitize_text_field($post_data['job_bm_cp_city']) : "";
-    $job_bm_cp_address = isset($post_data['job_bm_cp_address']) ? sanitize_text_field($post_data['job_bm_cp_address']) : "";
-    $job_bm_cp_website = isset($post_data['job_bm_cp_website']) ? sanitize_text_field($post_data['job_bm_cp_website']) : "";
-    $job_bm_cp_founded = isset($post_data['job_bm_cp_founded']) ? sanitize_text_field($post_data['job_bm_cp_founded']) : "";
-    $job_bm_cp_size = isset($post_data['job_bm_cp_size']) ? sanitize_text_field($post_data['job_bm_cp_size']) : "";
-    $job_bm_cp_logo = isset($post_data['job_bm_cp_logo']) ? sanitize_text_field($post_data['job_bm_cp_logo']) : "";
+    $job_bm_location_latlang = isset($post_data['job_bm_location_latlang']) ? sanitize_text_field($post_data['job_bm_location_latlang']) : "";
+    $job_bm_location_country_code = isset($post_data['job_bm_location_country_code']) ? sanitize_text_field($post_data['job_bm_location_country_code']) : "";
+    $job_bm_location_icon = isset($post_data['job_bm_location_icon']) ? esc_url_raw($post_data['job_bm_location_icon']) : "";
     $job_bm_location_cover = isset($post_data['job_bm_location_cover']) ? esc_url_raw($post_data['job_bm_location_cover']) : "";
 
 
-
-
-    wp_set_post_terms( $location_id, $location_category, 'location_category' );
-
-
-    update_post_meta($location_id, 'job_bm_cp_tagline', $job_bm_cp_tagline);
-    update_post_meta($location_id, 'job_bm_cp_mission', $job_bm_cp_mission);
-    update_post_meta($location_id, 'job_bm_cp_country', $job_bm_cp_country);
-    update_post_meta($location_id, 'job_bm_cp_city', $job_bm_cp_city);
-    update_post_meta($location_id, 'job_bm_cp_address', $job_bm_cp_address);
-    update_post_meta($location_id, 'job_bm_cp_website', $job_bm_cp_website);
-    update_post_meta($location_id, 'job_bm_cp_founded', $job_bm_cp_founded);
-    update_post_meta($location_id, 'job_bm_cp_size', $job_bm_cp_size);
-    update_post_meta($location_id, 'job_bm_cp_logo', $job_bm_cp_logo);
+    update_post_meta($location_id, 'job_bm_location_latlang', $job_bm_location_latlang);
+    update_post_meta($location_id, 'job_bm_location_country_code', $job_bm_location_country_code);
+    update_post_meta($location_id, 'job_bm_location_icon', $job_bm_location_icon);
     update_post_meta($location_id, 'job_bm_location_cover', $job_bm_location_cover);
 
 

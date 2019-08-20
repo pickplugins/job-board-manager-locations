@@ -3,7 +3,7 @@
 Plugin Name: Job Board Manager - Locations
 Plugin URI: http://pickplugins.com
 Description: Awesome location single page and display job list under any location via single page.
-Version: 2.0.3
+Version: 2.0.4
 Author: pickplugins
 Author URI: http://pickplugins.com
 License: GPLv2 or later
@@ -21,12 +21,12 @@ class JobBoardManagerLocations{
         define('job_bm_locations_plugin_dir', plugin_dir_path( __FILE__ ) );
         define('job_bm_locations_wp_url', 'https://wordpress.org/plugins/job-board-manager/' );
         define('job_bm_locations_plugin_name', 'Job Board Manager' );
-        define('job_bm_locations_plugin_version', '2.0.3' );
+        define('job_bm_locations_plugin_version', '2.0.4' );
 
 
         // Class
         require_once( job_bm_locations_plugin_dir . 'includes/class-post-types.php');
-        require_once( job_bm_locations_plugin_dir . 'includes/class-post-meta.php');
+        //require_once( job_bm_locations_plugin_dir . 'includes/class-post-meta.php');
 
         require_once( job_bm_locations_plugin_dir . 'includes/class-post-meta-location.php');
         require_once( job_bm_locations_plugin_dir . 'includes/class-post-meta-location-hook.php');
@@ -46,6 +46,8 @@ class JobBoardManagerLocations{
 
 
         // Function's
+        require_once( job_bm_locations_plugin_dir . 'includes/functions-dashboard.php');
+
         require_once( job_bm_locations_plugin_dir . 'includes/functions.php');
         //require_once( job_bm_locations_plugin_dir . 'templates/location-single-template-functions.php');
 
@@ -78,9 +80,13 @@ class JobBoardManagerLocations{
 		wp_localize_script( 'job_bm_locations_js', 'job_bm_locations_ajax', array( 'job_bm_locations_ajaxurl' => admin_url( 'admin-ajax.php')));
 
 		wp_enqueue_style('job_bm_locations_style', job_bm_locations_plugin_url.'assets/front/css/style.css');
-		wp_enqueue_style('job-count-by-location', job_bm_locations_plugin_url.'assets/front/css/job-count-by-location.css');		
-		wp_enqueue_style('job_bm_locations_location-single', job_bm_locations_plugin_url.'assets/front/css/location-single.css');
-				
+		wp_enqueue_style('job-count-by-location', job_bm_locations_plugin_url.'assets/front/css/job-count-by-location.css');
+        wp_register_style('job_bm_location_single', job_bm_locations_plugin_url.'assets/front/css/location-single.css');
+
+        wp_register_style('job_bm_my_locations', job_bm_locations_plugin_url.'assets/front/css/my-locations.css');
+
+
+
 		
 		}
 

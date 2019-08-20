@@ -3,8 +3,8 @@
 	Donate link: http://paratheme.com
 	Tags:  Company Location, Job Location, Job city,  Job, Job Poster, job manager, job, job list, job listing, Job Listings, job lists, job management, job manager,
 	Requires at least: 4.1
-	Tested up to: 4.7
-	Stable tag: 2.0.3
+	Tested up to: 5.2
+	Stable tag: 2.0.4
 	License: GPLv2 or later
 	License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -59,6 +59,9 @@ Plugin is translation ready, you can contribute in translation. please contact w
 
 
 == Changelog ==
+
+	= 2.0.4 =
+    * 20/08/2019 - update - re-write plugin
 
 	= 2.0.3 =
     * 14/10/2016 - fix - some minor issue fixed

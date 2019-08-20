@@ -6,6 +6,8 @@
 
 if ( ! defined('ABSPATH')) exit;  // if direct access 
 
+$html = '';
+
 	$location = array();
 	$wp_query = new WP_Query(
 		array (
@@ -73,71 +75,74 @@ if ( ! defined('ABSPATH')) exit;  // if direct access
 			$html .= '["'.$html_jobs.'", '.$job_bm_location_latlang.', '.$count.'],';
 	}
 	
-	$html .= ' ]; </script>';
-	$html .= '<div id="map" style="width:100%; height:420px;"></div>';
-	$html .= '
-	<script type="text/javascript">
-    	
-	var styles = [
-	  {
-		stylers: [
-		  { hue: "#0076D7" },
-		  { saturation: -20 }
-		]
-	  },
-	  {
-		featureType: "road",
-		elementType: "geometry",
-		stylers: [
-		  { lightness: 100 },
-		  { visibility: "simplified" }
-		]
-	  },
-	  {
-		featureType: "road",
-		elementType: "labels",
-		stylers: [
-		  { visibility: "off" }
-		]
-	  }
-	];
-	
+	$html .= ' ];';
+
+echo $html;
+	?>
+</script>
+<div id="map" style="width:100%; height:420px;"></div>
+<script type="text/javascript">
+
+    var styles = [
+        {
+            stylers: [
+                { hue: "#0076D7" },
+                { saturation: -20 }
+            ]
+        },
+        {
+            featureType: "road",
+            elementType: "geometry",
+            stylers: [
+                { lightness: 100 },
+                { visibility: "simplified" }
+            ]
+        },
+        {
+            featureType: "road",
+            elementType: "labels",
+            stylers: [
+                { visibility: "off" }
+            ]
+        }
+    ];
+
     var map = new google.maps.Map(document.getElementById("map"), {
-		zoom: 10,
-		center: new google.maps.LatLng(locations[0][1], locations[0][2]),
-		mapTypeId: google.maps.MapTypeId.ROADMAP,
-		scrollwheel: false,
-		navigationControl: false,
-		mapTypeControl: false,
-		scaleControl: false
+        zoom: 10,
+        center: new google.maps.LatLng(locations[0][1], locations[0][2]),
+        mapTypeId: google.maps.MapTypeId.ROADMAP,
+        scrollwheel: false,
+        navigationControl: false,
+        mapTypeControl: false,
+        scaleControl: false
     });
-	map.setOptions({styles: styles});
-	
+    map.setOptions({styles: styles});
+
     var infowindow = new google.maps.InfoWindow();
     var marker, i;
 
-    for ( i = 0; i < locations.length; i++){  
-		marker = new google.maps.Marker({
-			position: new google.maps.LatLng(locations[i][1], locations[i][2]),
-			map: map
-		});
+    for ( i = 0; i < locations.length; i++){
+        marker = new google.maps.Marker({
+            position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+            map: map
+        });
 
-		google.maps.event.addListener(marker, "mousemove", (function(marker, i) {
-			return function() {
-				infowindow.setContent(locations[i][0]);
-				infowindow.open(map, marker);
-			}
-		})( marker, i ));
-		
-		/*google.maps.event.addListener(marker, "mouseout", (function(marker, i) {
-			return function() {
-				infowindow.setContent(locations[i][0]);
-				infowindow.close(map, marker);
-			}
-		})( marker, i )); */
+        google.maps.event.addListener(marker, "mousemove", (function(marker, i) {
+            return function() {
+                infowindow.setContent(locations[i][0]);
+                infowindow.open(map, marker);
+            }
+        })( marker, i ));
+
+        /*google.maps.event.addListener(marker, "mouseout", (function(marker, i) {
+            return function() {
+                infowindow.setContent(locations[i][0]);
+                infowindow.close(map, marker);
+            }
+        })( marker, i )); */
     }
-	
-  </script>';
+
+</script>
 		
 	
 	

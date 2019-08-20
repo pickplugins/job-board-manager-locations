@@ -7,9 +7,45 @@
 
 }
 
+.location-single .location-cover{
+  max-height: 220px;
+  overflow: hidden;
+}
+
+.location-single .location-cover img{
+  box-shadow: none;
+  border-radius: 0;
+  margin-bottom: 15px;
+
+}
+
+
+.location-single .location-intro{
+  padding: 10px;
+  background: #efefef;
+}
+
+.location-single .logo {
+  display: inline-block;
+  height: 80px;
+  margin-right: 20px;
+  overflow: hidden;
+  vertical-align: top;
+  width: 80px;
+}
+
+.location-single .logo img {
+  width: 100%;
+}
+
+.location-single .name {
+  display: inline-block;
+  font-size: 18px;
+  margin: 0;
+  padding: 0;
+}
 .location-single .map-container {
   height: 300px;
-  margin-bottom: 20px;
   overflow: hidden;
   width: 100%;
 }
@@ -20,27 +56,13 @@
 
 
 
-.location-single .logo {
-  display: inline-block;
-  height: 50px;
-  margin-right: 20px;
-  overflow: hidden;
-  vertical-align: top;
-  width: 50px;
-}
-
-.location-single .logo img {
-  width: 100%;
-}
 
 
 
-.location-single .name {
-  display: inline-block;
-  font-size: 15px;
-  margin: 0;
-  padding: 0;
-}
+
+
+
+
 
 .location-single .country {
   display: block;
@@ -72,7 +94,7 @@
   display: inline-block;
   padding: 10px;
   vertical-align: top;
-  width: 100px;
+  width: 30%;
 }
 
 .location-single .related-location-container .single-location img{}

@@ -12,7 +12,7 @@ function job_bm_metabox_location_content_location_info($job_id){
 
     ?>
     <div class="section">
-        <div class="section-title"><?php echo __('Location Information','job-board-manager-company-profile'); ?></div>
+        <div class="section-title"><?php echo __('Location Information','job-board-manager-locations'); ?></div>
         <p class="section-description"></p>
     </div>
 
@@ -41,8 +41,8 @@ function job_bm_metabox_location_content_country_code($job_id){
     $args = array(
         'id'		=> 'job_bm_location_country_code',
         //'parent'		=> '',
-        'title'		=> __('Country','job-board-manager-company-profile'),
-        'details'	=> __('Select country.','job-board-manager-company-profile'),
+        'title'		=> __('Country','job-board-manager-locations'),
+        'details'	=> __('Select country.','job-board-manager-locations'),
         'type'		=> 'select',
         'value'		=> $job_bm_location_country_code,
         'default'		=> '',
@@ -68,18 +68,51 @@ function job_bm_metabox_location_content_latlang($job_id){
 
 
     $job_bm_location_latlang = get_post_meta($job_id, 'job_bm_location_latlang', true);
+    $job_bm_location_icon = get_post_meta($job_id, 'job_bm_location_icon', true);
+    $job_bm_location_cover = get_post_meta($job_id, 'job_bm_location_cover', true);
+
+
 
     $args = array(
         'id'		=> 'job_bm_location_latlang',
         //'parent'		=> '',
-        'title'		=> __('Latitude, Longitude','job-board-manager-company-profile'),
-        'details'	=> __('Write Latitude,Longitude, ex: 46.414382,10.013988','job-board-manager-company-profile'),
+        'title'		=> __('Latitude, Longitude','job-board-manager-locations'),
+        'details'	=> __('Write Latitude,Longitude, ex: 46.414382,10.013988','job-board-manager-locations'),
         'type'		=> 'text',
         'value'		=> $job_bm_location_latlang,
         'default'		=> '',
     );
 
     $settings_tabs_field->generate_field($args);
+
+
+    $args = array(
+        'id'		=> 'job_bm_location_icon',
+        //'parent'		=> '',
+        'title'		=> __('Location icon','job-board-manager-locations'),
+        'details'	=> __('Upload location icon','job-board-manager-locations'),
+        'type'		=> 'media_url',
+        'value'		=> $job_bm_location_icon,
+        'default'		=> '',
+        'placeholder'		=> '',
+    );
+
+    $settings_tabs_field->generate_field($args);
+
+
+    $args = array(
+        'id'		=> 'job_bm_location_cover',
+        //'parent'		=> '',
+        'title'		=> __('Location cover image','job-board-manager-locations'),
+        'details'	=> __('Upload location cover image','job-board-manager-locations'),
+        'type'		=> 'media_url',
+        'value'		=> $job_bm_location_cover,
+        'default'		=> '',
+        'placeholder'		=> '',
+    );
+
+    $settings_tabs_field->generate_field($args);
+
 
 }
 
@@ -105,12 +138,12 @@ function job_bm_metabox_location_content_admin_featured($job_id){
     $args = array(
         'id'		=> 'job_bm_location_featured',
         //'parent'		=> '',
-        'title'		=> __('Featured location','job-board-manager-company-profile'),
-        'details'	=> __('Choose location as featured','job-board-manager-company-profile'),
+        'title'		=> __('Featured location','job-board-manager-locations'),
+        'details'	=> __('Choose location as featured','job-board-manager-locations'),
         'type'		=> 'select',
         'value'		=> $job_bm_location_featured,
         'default'		=> '',
-        'args'		=> array('no'=>__('No', 'job-board-manager-company-profile'),'yes'=>__('Yes', 'job-board-manager-company-profile')),
+        'args'		=> array('no'=>__('No', 'job-board-manager-locations'),'yes'=>__('Yes', 'job-board-manager-locations')),
     );
 
     $settings_tabs_field->generate_field($args);
@@ -135,6 +168,12 @@ function job_bm_metabox_save_location($job_id){
 
     $job_bm_location_latlang = isset($_POST['job_bm_location_latlang']) ? sanitize_text_field($_POST['job_bm_location_latlang']) : '';
     update_post_meta($job_id, 'job_bm_location_latlang', $job_bm_location_latlang);
+
+    $job_bm_location_icon = isset($_POST['job_bm_location_icon']) ? esc_url_raw($_POST['job_bm_location_icon']) : '';
+    update_post_meta($job_id, 'job_bm_location_icon', $job_bm_location_icon);
+
+    $job_bm_location_cover= isset($_POST['job_bm_location_cover']) ? esc_url_raw($_POST['job_bm_location_cover']) : '';
+    update_post_meta($job_id, 'job_bm_location_cover', $job_bm_location_cover);
 
 
     $job_bm_location_featured = isset($_POST['job_bm_location_featured']) ? sanitize_text_field($_POST['job_bm_location_featured']) : '';
