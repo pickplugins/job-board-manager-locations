@@ -38,40 +38,45 @@ function job_bm_top_locations_list($atts){
     <div class="total">
         <?php echo apply_filters('job_bm_top_locations_total_text', $total); ?>
     </div>
+
+    <ul class="location-list">
+        <?php
+
+
+        $i=1;
+        foreach($job_count_by_location_data as $location_key=>$location_data){
+
+            if($i<= $max_item){
+
+                if($location_data['count']>0){
+
+                    $url = $location_data['url'];
+                    $name = $location_data['name'];
+                    $count = $location_data['count'];
+
+                    ?>
+                    <li class="single-location">
+                        <a href="<?php echo $url; ?>">
+                            <?php
+                            echo $name;
+                            ?>
+                        </a>
+                        <span class="count">(<?php echo $count; ?>)</span>
+                    </li>
+                    <?php
+                }
+
+            }
+
+            $i++;
+        }
+
+        ?>
+    </ul>
     <?php
 
 
 
-    $i=1;
-    foreach($job_count_by_location_data as $location_key=>$location_data){
-
-        if($i<= $max_item){
-
-            if($location_data['count']>0){
-
-                $url = $location_data['url'];
-                $name = $location_data['name'];
-                $count = $location_data['count'];
-
-                ?>
-                <div class="single-location">
-                    <a href="<?php echo $url; ?>">
-                        <?php
-
-                        $list_item =  sprintf(__('%s - %s','job-board-manager-locations'), $name, $count);
-                        echo apply_filters('job_bm_top_locations_list_item', $list_item);
-
-                        ?>
-                    </a>
-
-                </div>
-                <?php
-            }
-
-        }
-
-        $i++;
-    }
 
 
 

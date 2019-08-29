@@ -25,23 +25,6 @@ if(!function_exists('job_bm_my_locations_title')):
 endif;
 
 
-add_action('job_bm_my_locations','job_bm_my_locations_submit_button');
-
-if(!function_exists('job_bm_my_locations_submit_button')):
-    function job_bm_my_locations_submit_button(){
-        ?>
-
-        <?php
-
-    }
-
-endif;
-
-
-
-
-
-
 
 
 add_action('job_bm_my_locations','job_bm_my_locations_list');
@@ -208,7 +191,7 @@ if(!function_exists('job_bm_my_locations_loop_header')){
                 <?php endif; ?>
 
 
-                <span class="location-delete" job-id="<?php echo $location_id; ?>" title="<?php echo __('Location trash.', 'job-board-manager-locations'); ?>"><i class="far fa-trash-alt"></i></span>
+<!--                <span class="location-delete" job-id="--><?php //echo $location_id; ?><!--" title="--><?php //echo __('Location trash.', 'job-board-manager-locations'); ?><!--"><i class="far fa-trash-alt"></i></span>-->
                 <span class="job-featured <?php echo $featured_class; ?>" title="<?php echo ($featured=='yes') ?  __('Featured location.', 'job-board-manager-locations') : 'Not featured'; ?>"><i class="fas fa-star"></i></span>
 
 

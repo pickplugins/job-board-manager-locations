@@ -7,6 +7,14 @@
 
 }
 
+
+.location-single .preview-notice{
+  background: #ffefbf;
+  padding: 10px;
+  margin-bottom: 30px;
+  border-left: 3px solid #fdc51c;
+}
+
 .location-single .location-cover{
   max-height: 220px;
   overflow: hidden;

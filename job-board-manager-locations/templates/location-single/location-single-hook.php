@@ -44,6 +44,28 @@ function job_bm_locations_wp_title($title){
 
 add_action('job_bm_location_single', 'job_bm_location_single_header_1');
 
+
+
+add_action( 'job_bm_location_single', 'job_bm_location_single_preview', 5 );
+if ( ! function_exists( 'job_bm_location_single_preview' ) ) {
+    function job_bm_location_single_preview(){
+
+        if(is_preview()):
+            ?>
+            <div class="preview-notice"><?php echo __('This is preview of your location, please do not share link.','job-board-manager'); ?></div>
+        <?php
+        endif;
+
+    }
+}
+
+
+
+
+
+
+
+
 function job_bm_location_single_header_1($location_id){
 
 
