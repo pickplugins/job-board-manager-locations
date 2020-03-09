@@ -99,7 +99,9 @@ if(!function_exists('job_bm_settings_tabs_content_locations')) {
 
         $job_bm_locations_map_zoom = get_option('job_bm_locations_map_zoom');
         $job_bm_display_wiki_content = get_option('job_bm_display_wiki_content');
-
+        $job_bm_location_submit_recaptcha = get_option('job_bm_location_submit_recaptcha');
+        $job_bm_location_submit_post_status = get_option('job_bm_location_submit_post_status');
+        $job_bm_location_submit_redirect = get_option('job_bm_location_submit_redirect');
 
 
         ?>
@@ -165,6 +167,59 @@ if(!function_exists('job_bm_settings_tabs_content_locations')) {
 
             $settings_tabs_field->generate_field($args);
 
+            $args = array(
+                'id'		=> 'job_bm_location_submit_recaptcha',
+                //'parent'		=> '',
+                'title'		=> __('reCAPTCHA enable','job-board-manager-locations'),
+                'details'	=> __('Enable reCAPTCHA to protect spam on location submit form.','job-board-manager-locations'),
+                'type'		=> 'select',
+                //'multiple'		=> true,
+                'value'		=> $job_bm_location_submit_recaptcha,
+                'default'		=> 'yes',
+                'args'		=> array( 'yes'=>__('Yes','job-board-manager-locations'), 'no'=>__('No','job-board-manager-locations'),),
+            );
+
+            $settings_tabs_field->generate_field($args);
+
+
+            $args = array(
+                'id'		=> 'job_bm_location_submit_post_status',
+                //'parent'		=> '',
+                'title'		=> __('Submitted location status','job-board-manager-locations'),
+                'details'	=> __('Choose location status for newly submitted companies.','job-board-manager-locations'),
+                'type'		=> 'select',
+                //'multiple'		=> true,
+                'value'		=> $job_bm_location_submit_post_status,
+                'default'		=> '',
+                'args'		=> array( 'draft'=>__('Draft','job-board-manager-locations'), 'pending'=>__('Pending','job-board-manager-locations'), 'publish'=>__('Published','job-board-manager-locations'), 'private'=>__('Private','job-board-manager-locations'), 'trash'=>__('Trash','job-board-manager-locations')),
+            );
+
+            $settings_tabs_field->generate_field($args);
+
+
+
+
+
+            $page_list = job_bm_page_list_id();
+            //$page_list = array_merge($page_list, array('job_preview'=>'Job Preview'));
+
+            $page_list['location_preview'] = __('-- Location Preview --', 'job-board-manager-locations');
+            $page_list['location_link'] = __('-- Location Link --', 'job-board-manager-locations');
+
+            $args = array(
+                'id'		=> 'job_bm_location_submit_redirect',
+                //'parent'		=> '',
+                'title'		=> __('Redirect after location submit','job-board-manager-locations'),
+                'details'	=> __('Redirect other link after location submitted','job-board-manager-locations'),
+                'type'		=> 'select',
+                //'multiple'		=> true,
+                'value'		=> $job_bm_location_submit_redirect,
+                'default'		=> '',
+                'args'		=> $page_list,
+            );
+
+            $settings_tabs_field->generate_field($args);
+
 
 
             ?>
@@ -200,6 +255,15 @@ if(!function_exists('job_bm_settings_save_locations')) {
 
         $job_bm_display_wiki_content = isset($_POST['job_bm_display_wiki_content']) ? sanitize_text_field($_POST['job_bm_display_wiki_content']) : '';
         update_option('job_bm_display_wiki_content', $job_bm_display_wiki_content);
+
+        $job_bm_location_submit_recaptcha = isset($_POST['job_bm_location_submit_recaptcha']) ? sanitize_text_field($_POST['job_bm_location_submit_recaptcha']) : '';
+        update_option('job_bm_location_submit_recaptcha', $job_bm_location_submit_recaptcha);
+
+        $job_bm_location_submit_post_status = isset($_POST['job_bm_location_submit_post_status']) ? sanitize_text_field($_POST['job_bm_location_submit_post_status']) : '';
+        update_option('job_bm_location_submit_post_status', $job_bm_location_submit_post_status);
+
+        $job_bm_location_submit_redirect = isset($_POST['job_bm_location_submit_redirect']) ? sanitize_text_field($_POST['job_bm_location_submit_redirect']) : '';
+        update_option('job_bm_location_submit_redirect', $job_bm_location_submit_redirect);
 
 
     }
@@ -239,7 +303,7 @@ if(!function_exists('job_bm_settings_tabs_right_panel_locations')) {
         <a target="_blank" class="button" href="https://www.pickplugins.com/forum/?ref=dashboard">Create Ticket</a>
 
         <h3>Write Reviews</h3>
-        <p>If you found Job Board Manger - Company Profile help you to build something useful, please help us by
+        <p>If you found Job Board Manger - Locations help you to build something useful, please help us by
             providing your feedback and five star reviews on plugin page.</p>
         <a target="_blank" class="button" href="https://wordpress.org/support/plugin/job-board-manager-locations/reviews/#new-post">Rate Us <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></a>
 

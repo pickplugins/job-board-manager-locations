@@ -6,7 +6,7 @@ function job_bm_location_single($content) {
 
     global $post;
 
-    if ($post->post_type == 'location'){
+    if (is_singular('location') && $post->post_type == 'location'){
 
         ob_start();
         include( job_bm_locations_plugin_dir . 'templates/location-single/location-single.php');
@@ -106,6 +106,8 @@ function job_bm_location_single_header($location_id){
 
 
     if($job_bm_locations_map_type=='dynamic') {
+        wp_enqueue_script('maps.google.js');
+
         ?>
         <div class="map-container"><div id="map"></div></div>
         <script>
@@ -129,7 +131,7 @@ function job_bm_location_single_header($location_id){
 
     }
     elseif($job_bm_locations_map_type=='static'){
-
+        wp_enqueue_script('maps.google.js');
         // Free Gogole map API doesn't support more than 640x640 'px size image return.
 
 

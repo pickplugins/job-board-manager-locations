@@ -3,8 +3,10 @@
 Plugin Name: Job Board Manager - Locations
 Plugin URI: http://pickplugins.com
 Description: Awesome location single page and display job list under any location via single page.
-Version: 2.0.4
+Version: 1.0.10
 Author: pickplugins
+Text Domain: job-board-manager-locations
+Domain Path: /languages
 Author URI: http://pickplugins.com
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -19,9 +21,9 @@ class JobBoardManagerLocations{
 	
         define('job_bm_locations_plugin_url', plugins_url('/', __FILE__)  );
         define('job_bm_locations_plugin_dir', plugin_dir_path( __FILE__ ) );
-        define('job_bm_locations_wp_url', 'https://wordpress.org/plugins/job-board-manager/' );
-        define('job_bm_locations_plugin_name', 'Job Board Manager' );
-        define('job_bm_locations_plugin_version', '2.0.4' );
+        define('job_bm_locations_wp_url', 'https://wordpress.org/plugins/job-board-manager-locations/' );
+        define('job_bm_locations_plugin_name', 'Job Board Manager - Locations' );
+        define('job_bm_locations_plugin_version', '1.0.10' );
 
 
         // Class
@@ -74,15 +76,14 @@ class JobBoardManagerLocations{
 	public function job_bm_locations_front_scripts(){
 		
 		wp_enqueue_script('jquery');
-		//wp_enqueue_script( 'maps.google.js', plugins_url( '/assets/front/js/maps.google.js', __FILE__ ) );
-		wp_enqueue_script( 'maps.google.js', 'https://maps.googleapis.com/maps/api/js');
-		wp_enqueue_script('job_bm_locations_js', plugins_url( '/assets/front/js/scripts.js' , __FILE__ ) , array( 'jquery' ));
-		wp_localize_script( 'job_bm_locations_js', 'job_bm_locations_ajax', array( 'job_bm_locations_ajaxurl' => admin_url( 'admin-ajax.php')));
 
-		wp_enqueue_style('job_bm_locations_style', job_bm_locations_plugin_url.'assets/front/css/style.css');
-		wp_enqueue_style('job-count-by-location', job_bm_locations_plugin_url.'assets/front/css/job-count-by-location.css');
+		wp_register_script( 'maps.google.js', 'https://maps.googleapis.com/maps/api/js');
+		//wp_enqueue_script('job_bm_locations_js', plugins_url( '/assets/front/js/scripts.js' , __FILE__ ) , array( 'jquery' ));
+		//wp_localize_script( 'job_bm_locations_js', 'job_bm_locations_ajax', array( 'job_bm_locations_ajaxurl' => admin_url( 'admin-ajax.php')));
+
+		//wp_enqueue_style('job_bm_locations_style', job_bm_locations_plugin_url.'assets/front/css/style.css');
+
         wp_register_style('job_bm_location_single', job_bm_locations_plugin_url.'assets/front/css/location-single.css');
-
         wp_register_style('job_bm_my_locations', job_bm_locations_plugin_url.'assets/front/css/my-locations.css');
 
 

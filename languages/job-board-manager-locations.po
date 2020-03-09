@@ -1,0 +1,478 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Job Board Manager - Locations\n"
+"POT-Creation-Date: 2019-08-21 12:48+0600\n"
+"PO-Revision-Date: 2019-08-21 12:48+0600\n"
+"Last-Translator: \n"
+"Language-Team: pickplugins <support@pickplugins.com>\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.2.3\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-SearchPath-0: includes\n"
+"X-Poedit-SearchPath-1: templates\n"
+
+#: includes/class-functions.php:298
+msgid "reCaptcha"
+msgstr ""
+
+#: includes/class-functions.php:299
+msgid "reCaptcha test."
+msgstr ""
+
+#: includes/class-functions.php:309
+msgid "Location Title"
+msgstr ""
+
+#: includes/class-functions.php:310
+msgid "Location title Here"
+msgstr ""
+
+#: includes/class-functions.php:321
+msgid "Location Descriptions"
+msgstr ""
+
+#: includes/class-functions.php:322
+msgid "Write location descriptions here"
+msgstr ""
+
+#: includes/class-functions.php:338
+msgid "Location Country"
+msgstr ""
+
+#: includes/class-functions.php:339
+msgid "Country of the Location, ex: Bangladesh"
+msgstr ""
+
+#: includes/class-functions.php:350
+#: includes/class-post-meta-location-hook.php:79
+#: includes/class-post-meta.php:43
+#: templates/location-submit/location-submit-hook.php:153
+msgid "Latitude, Longitude"
+msgstr ""
+
+#: includes/class-functions.php:351 includes/class-post-meta.php:44
+msgid "Latitude,Longitude, ex: 46.414382,10.013988"
+msgstr ""
+
+#: includes/class-locations-frontend-form.php:31
+#, php-format
+msgid "Please <a href=\"%s\">login</a> to continue!"
+msgstr ""
+
+#: includes/class-locations-frontend-form.php:78
+msgid "Submission Status:"
+msgstr ""
+
+#: includes/class-locations-frontend-form.php:85
+msgid "Something error"
+msgstr ""
+
+#: includes/class-locations-frontend-form.php:190
+#: templates/location-submit/location-submit-hook.php:221
+#: templates/location-submit/location-submit-hook.php:246
+msgid "Upload"
+msgstr ""
+
+#: includes/class-locations-frontend-form.php:217
+#: templates/location-submit/location-submit-hook.php:328
+msgid "Submit"
+msgstr ""
+
+#: includes/class-post-meta-location-hook.php:15
+#: templates/location-submit/location-submit-hook.php:127
+msgid "Location Information"
+msgstr ""
+
+#: includes/class-post-meta-location-hook.php:44
+#: includes/class-post-meta.php:34
+#: templates/location-submit/location-submit-hook.php:179
+msgid "Country"
+msgstr ""
+
+#: includes/class-post-meta-location-hook.php:45
+msgid "Select country."
+msgstr ""
+
+#: includes/class-post-meta-location-hook.php:80
+msgid "Write Latitude,Longitude, ex: 46.414382,10.013988"
+msgstr ""
+
+#: includes/class-post-meta-location-hook.php:92
+#: templates/location-submit/location-submit-hook.php:214
+msgid "Location icon"
+msgstr ""
+
+#: includes/class-post-meta-location-hook.php:93
+#: templates/location-submit/location-submit-hook.php:224
+msgid "Upload location icon"
+msgstr ""
+
+#: includes/class-post-meta-location-hook.php:106
+#: templates/location-submit/location-submit-hook.php:239
+msgid "Location cover image"
+msgstr ""
+
+#: includes/class-post-meta-location-hook.php:107
+#: templates/location-submit/location-submit-hook.php:249
+msgid "Upload location cover image"
+msgstr ""
+
+#: includes/class-post-meta-location-hook.php:141
+#: templates/my-locations/my-locations-hook.php:230
+msgid "Featured location"
+msgstr ""
+
+#: includes/class-post-meta-location-hook.php:142
+msgid "Choose location as featured"
+msgstr ""
+
+#: includes/class-post-meta-location-hook.php:146
+#: includes/class-settings.php:64 includes/functions-settings.php:163
+msgid "No"
+msgstr ""
+
+#: includes/class-post-meta-location-hook.php:146
+#: includes/class-settings.php:64 includes/functions-settings.php:163
+msgid "Yes"
+msgstr ""
+
+#: includes/class-post-meta-location.php:23
+msgid "Location data"
+msgstr ""
+
+#: includes/class-post-meta-location.php:49
+#, php-format
+msgid "%s Location info"
+msgstr ""
+
+#: includes/class-post-meta-location.php:57
+#, php-format
+msgid "%s Admin action"
+msgstr ""
+
+#: includes/class-post-meta.php:35
+msgid "Country, ex: Bangladesh"
+msgstr ""
+
+#: includes/class-post-meta.php:194
+msgid "Upload File"
+msgstr ""
+
+#: includes/class-post-meta.php:282
+msgid "Location Data"
+msgstr ""
+
+#: includes/class-post-types.php:22
+msgid "Location"
+msgstr ""
+
+#: includes/class-post-types.php:23
+msgid "Locations"
+msgstr ""
+
+#: includes/class-post-types.php:32
+#, php-format
+msgid "All %s"
+msgstr ""
+
+#: includes/class-post-types.php:33
+msgid "Add New"
+msgstr ""
+
+#: includes/class-post-types.php:34
+#, php-format
+msgid "Add %s"
+msgstr ""
+
+#: includes/class-post-types.php:35
+msgid "Edit"
+msgstr ""
+
+#: includes/class-post-types.php:36
+#, php-format
+msgid "Edit %s"
+msgstr ""
+
+#: includes/class-post-types.php:37
+#, php-format
+msgid "New %s"
+msgstr ""
+
+#: includes/class-post-types.php:38 includes/class-post-types.php:39
+#, php-format
+msgid "View %s"
+msgstr ""
+
+#: includes/class-post-types.php:40
+#, php-format
+msgid "Search %s"
+msgstr ""
+
+#: includes/class-post-types.php:41
+#, php-format
+msgid "No %s found"
+msgstr ""
+
+#: includes/class-post-types.php:42
+#, php-format
+msgid "No %s found in trash"
+msgstr ""
+
+#: includes/class-post-types.php:43
+#, php-format
+msgid "Parent %s"
+msgstr ""
+
+#: includes/class-post-types.php:45
+#, php-format
+msgid "This is where you can create and manage %s."
+msgstr ""
+
+#: includes/class-settings.php:24
+msgid "Settings"
+msgstr ""
+
+#: includes/class-settings.php:43 includes/functions-settings.php:116
+msgid "Map Display"
+msgstr ""
+
+#: includes/class-settings.php:44 includes/functions-settings.php:117
+msgid "Map Type in single location page header"
+msgstr ""
+
+#: includes/class-settings.php:47 includes/functions-settings.php:122
+msgid "Static"
+msgstr ""
+
+#: includes/class-settings.php:47 includes/functions-settings.php:122
+msgid "Dynamic"
+msgstr ""
+
+#: includes/class-settings.php:47 includes/functions-settings.php:122
+msgid "None"
+msgstr ""
+
+#: includes/class-settings.php:52 includes/functions-settings.php:144
+msgid "Map zoom level"
+msgstr ""
+
+#: includes/class-settings.php:53 includes/functions-settings.php:145
+msgid "Map zoom in single location page header, value (0-20)"
+msgstr ""
+
+#: includes/class-settings.php:60
+msgid "Display Content from Wikipedia ?"
+msgstr ""
+
+#: includes/class-settings.php:61 includes/functions-settings.php:158
+msgid "Location content on single page display from wikipidea when empty."
+msgstr ""
+
+#: includes/functions-dashboard.php:9
+msgid "My locations"
+msgstr ""
+
+#: includes/functions-settings.php:11
+#, php-format
+msgid "%s Locations"
+msgstr ""
+
+#: includes/functions-settings.php:37
+msgid "Location page settings"
+msgstr ""
+
+#: includes/functions-settings.php:38
+msgid "Choose option location for pages."
+msgstr ""
+
+#: includes/functions-settings.php:46
+msgid "Location submit page"
+msgstr ""
+
+#: includes/functions-settings.php:47
+msgid ""
+"Choose the page for location submit page, where the shortcode "
+"<code>[job_bm_location_submit_form]</code> used."
+msgstr ""
+
+#: includes/functions-settings.php:107
+msgid "Locations settings"
+msgstr ""
+
+#: includes/functions-settings.php:108
+msgid "Choose option for locations."
+msgstr ""
+
+#: includes/functions-settings.php:122
+msgid "Cover image"
+msgstr ""
+
+#: includes/functions-settings.php:131
+msgid "Map API key"
+msgstr ""
+
+#: includes/functions-settings.php:132
+msgid "Put your gogole map api key here."
+msgstr ""
+
+#: includes/functions-settings.php:157
+msgid "Display Content from Wikipedia"
+msgstr ""
+
+#: includes/functions.php:36 includes/functions.php:42
+msgid "Nothing found"
+msgstr ""
+
+#: includes/menu/settings.php:429
+msgid "Changes Saved."
+msgstr ""
+
+#: includes/menu/settings.php:447
+msgid " Settings"
+msgstr ""
+
+#: includes/menu/settings.php:469
+msgid "Save Changes"
+msgstr ""
+
+#: templates/location-single/location-single-hook.php:38
+#, php-format
+msgid "Jobs in %s"
+msgstr ""
+
+#: templates/location-single/location-single-hook.php:55
+msgid "This is preview of your location, please do not share link."
+msgstr ""
+
+#: templates/location-single/location-single-hook.php:247
+msgid "Source:"
+msgstr ""
+
+#: templates/location-single/location-single-hook.php:305
+msgid "Related Location"
+msgstr ""
+
+#: templates/location-submit/location-submit-hook.php:16
+msgid "Location name"
+msgstr ""
+
+#: templates/location-submit/location-submit-hook.php:19
+msgid "Write your location name"
+msgstr ""
+
+#: templates/location-submit/location-submit-hook.php:40
+msgid "Location description"
+msgstr ""
+
+#: templates/location-submit/location-submit-hook.php:50
+msgid "Write your location details."
+msgstr ""
+
+#: templates/location-submit/location-submit-hook.php:90
+msgid "Company category"
+msgstr ""
+
+#: templates/location-submit/location-submit-hook.php:107
+msgid "Select location category."
+msgstr ""
+
+#: templates/location-submit/location-submit-hook.php:156
+msgid "Write your location tag-line"
+msgstr ""
+
+#: templates/location-submit/location-submit-hook.php:196
+msgid "Select location country."
+msgstr ""
+
+#: templates/location-submit/location-submit-hook.php:291
+msgid "Please prove you are human."
+msgstr ""
+
+#: templates/location-submit/location-submit-hook.php:364
+msgid "ERROR: Company name is empty."
+msgstr ""
+
+#: templates/location-submit/location-submit-hook.php:369
+msgid "ERROR: Company details is empty."
+msgstr ""
+
+#: templates/location-submit/location-submit-hook.php:374
+msgid "ERROR: Company Latitude, Longitude is empty."
+msgstr ""
+
+#: templates/location-submit/location-submit-hook.php:380
+msgid "ERROR: Country is empty."
+msgstr ""
+
+#: templates/location-submit/location-submit-hook.php:385
+msgid "ERROR: reCaptcha test failed."
+msgstr ""
+
+#: templates/location-submit/location-submit-hook.php:390
+#, php-format
+msgid ""
+"ERROR: Please <a target=\"_blank\" href=\"%s\">login</a> to submit question."
+msgstr ""
+
+#: templates/location-submit/location-submit-hook.php:396
+msgid "ERROR: security test failed."
+msgstr ""
+
+#: templates/location-submit/location-submit-hook.php:484
+msgid "Thanks for submit your location, we will review soon."
+msgstr ""
+
+#: templates/my-locations/my-locations-hook.php:17
+msgid "My Locations"
+msgstr ""
+
+#: templates/my-locations/my-locations-hook.php:18
+msgid "Add Location"
+msgstr ""
+
+#: templates/my-locations/my-locations-hook.php:125
+#, php-format
+msgid "%s You haven't created any location."
+msgstr ""
+
+#: templates/my-locations/my-locations-hook.php:135
+#, php-format
+msgid "Please <a href=\"%s\">login</a> to see your locations."
+msgstr ""
+
+#: templates/my-locations/my-locations-hook.php:184
+msgid "Location id."
+msgstr ""
+
+#: templates/my-locations/my-locations-hook.php:188
+msgid "Location edit."
+msgstr ""
+
+#: templates/my-locations/my-locations-hook.php:195
+msgid "Featured location."
+msgstr ""
+
+#: templates/my-locations/my-locations-hook.php:230
+msgid "Not Featured"
+msgstr ""
+
+#: templates/my-locations/my-locations-hook.php:235
+msgid "Location link."
+msgstr ""
+
+#: templates/my-locations/my-locations-hook.php:237
+msgid "Published:"
+msgstr ""
+
+#: templates/my-locations/my-locations-hook.php:238
+msgid "Publish Status:"
+msgstr ""
+
+#: templates/my-locations/my-locations-hook.php:239
+msgid "Featured:"
+msgstr ""
